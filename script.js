@@ -33,3 +33,10 @@ for(let i = 0; i < q.length; i++) {
     });
 }
 
+
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
+  

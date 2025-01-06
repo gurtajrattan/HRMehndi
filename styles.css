@@ -9,7 +9,6 @@ h1, h2 {
   margin: 0;
 }
 
-/* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -23,36 +22,48 @@ h1, h2 {
   z-index: 1000;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.navbar .logo img {
+.logo img {
   height: 40px;
   margin-right: 10px;
 }
 
-.navbar .nav-links {
+.nav-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.navbar .nav-links li {
+.nav-links li {
   margin: 0 10px;
 }
 
-.navbar .nav-links a {
+.nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
 
-.navbar .nav-links a:hover,
-.navbar .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: red;
+}
+
+/* Responsive Dropdown Menu Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute; /* Ensures you can position it freely */
+  top: 15px; /* Adjust vertical position */
+  right: 20px; /* Adjust horizontal position */
 }
 
 /* Hero Section */
@@ -139,7 +150,7 @@ h1, h2 {
     padding: 0 10vw;
     font-size: 30px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     text-transform: capitalize;
   }
 
@@ -307,12 +318,12 @@ h1, h2 {
 .a {
   overflow: hidden;
   height: 0;
-  padding: 0 1em 0 3.3em;
+  transition: height 0.3s ease;
 }
 
 .a-opened {
-  padding: 1em 1em 2em 3.3em;
-  height: initial;
+    height: auto;
+    padding-top: 0.5em;
 }
 
 .arrow-rotated {
@@ -321,9 +332,9 @@ h1, h2 {
 
 /* Contact page */
 .social-icon {
-  font-size: 100px;
+  font-size: 125px;
   text-decoration: none;
-  margin: 0 50px;
+  margin: 0 86px;
 }
 
 .instagram {
@@ -348,19 +359,29 @@ h1, h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .nav-links {
-      flex-direction: column;
-      text-align: center;
+  .nav-links.show {
+    display: flex;
   }
 
   .nav-links li {
-      margin: 10px 0;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    right: 40px;
   }
 
   .hero {
@@ -387,6 +408,32 @@ h1, h2 {
   .about-section p {
       font-size: 0.9rem;
   }
+
+  /* Social Icons on Phone */
+  .social-icons-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* Space between icons */
+      flex-wrap: wrap; /* Ensures proper wrapping */
+  }
+
+  .social-icon {
+      font-size: 50px; /* Smaller size */
+      margin: 0 15px;
+  }
+
+  .faq {
+    width: 90%; /* Reduce width for smaller screens */
+  }
+
+  .faq li {
+      font-size: 0.9rem; /* Reduce text size for smaller screens */
+  }
+
+  .q {
+      flex-direction: row;
+      justify-content: space-between;
+  }
 }
 
 @media (max-width: 480px) {
@@ -403,9 +450,14 @@ h1, h2 {
       font-size: 0.8rem;
   }
 
+  .social-icons-container {
+      flex-direction: row;
+      gap: 5px;
+  }
+
   .social-icon {
-      font-size: 100px;
-      margin: 0 50px;
+      font-size: 40px; /* Even smaller for very small screens */
+      margin: 0 3px;
   }
 
   .faq-section {
@@ -415,4 +467,17 @@ h1, h2 {
   .faq p {
       font-size: 0.9rem;
   }
+  .faq {
+    width: 100%; /* Use full width for very small screens */
+  }
+
+  .faq li {
+      padding: 0.8em;
+      font-size: 0.85rem; /* Further reduce font size for tiny screens */
+  }
+
+  .q {
+      flex-direction: row;
+      justify-content: space-between;
+}
 }
