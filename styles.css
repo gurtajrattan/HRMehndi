@@ -418,22 +418,27 @@ h1, h2 {
   }
 
   .social-icon {
-      font-size: 50px; /* Smaller size */
-      margin: 0 15px;
+      font-size: 80px; /* Smaller size */
+      margin: 0 25px;
   }
 
   .faq {
-    width: 90%; /* Reduce width for smaller screens */
+    margin-right: 30px;
   }
 
-  .faq li {
-      font-size: 0.9rem; /* Reduce text size for smaller screens */
+  .faq p{
+    margin-right: 30px;
   }
 
-  .q {
-      flex-direction: row;
-      justify-content: space-between;
-  }
+.faq li {
+    font-size: 0.9rem; /* Adjust text size */
+    padding: 0.8em;
+}
+
+.q {
+    flex-direction: row;
+    justify-content: space-between; /* Keep arrow and text aligned */
+}
 }
 
 @media (max-width: 480px) {
@@ -461,19 +466,20 @@ h1, h2 {
   }
 
   .faq-section {
-      padding: 3em 1em;
+      margin-left: 30px; /* Shift less on smaller screens */
   }
 
   .faq p {
       font-size: 0.9rem;
+      margin-right: 30px;
   }
   .faq {
-    width: 100%; /* Use full width for very small screens */
+    width: 90%; /* Use full width for very small screens */
   }
 
   .faq li {
-      padding: 0.8em;
-      font-size: 0.85rem; /* Further reduce font size for tiny screens */
+      padding: 0.85em;
+      font-size: 0.7rem; /* Further reduce font size for tiny screens */
   }
 
   .q {
